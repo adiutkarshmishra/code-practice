@@ -1,23 +1,23 @@
 function rot13(str) {
+  str= str.toUpperCase()
   const check = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
   const regex = /[\s!?.]/g
   let x = str.split("");
-  console.log(x)
+
   let y = x.map((arg)=> {
     if(arg.match(regex)) return arg
     else return check.indexOf(arg) + 13
   })
-  console.log(y)
+
 
   let z = y.map((arg)=>{
     if(regex.test(arg)) return arg;
     if(arg > 25) return check[arg-26];
     else return check[arg]
   })
-  console.log(z)
-  // let stri = "!"
-  // console.log(stri.match(regex))
+
+
   return z.join("");
 }
 
-console.log(rot13("SERR CVMMN!"));
+console.log(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT."));
